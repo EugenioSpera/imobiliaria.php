@@ -1,0 +1,85 @@
+
+
+
+
+
+
+/* -------------------------------- Header -------------------------- */
+
+div.img-header {
+    background-image: url(../img/img-banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 200px;
+}
+
+header ul {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 40px;
+}
+
+li {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+li:hover {
+    border: 10px solid #fff;
+    border-radius: 20px;
+    
+}
+
+
+
+/* -------------------------------- Main -------------------------- */
+
+
+main form {
+    flex-direction: column;
+    display: flex;
+    gap: 10px;
+    color: #fff;
+}
+
+div.clientes {
+    border-radius: 20px;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 500px;
+    padding-left: 20px;
+    background-image: url(../img/ceu-de-espaco-3d-abstrato-com-estrelas-e-nebulosa_1048-8320.avif);
+}
+
+div.clientes h2 {
+    color: #fff;
+}
+
+
+form.formulario input {
+    border: none;
+    border-radius: 20px;
+    width: 80%;
+}
+
+form.formulario input:hover {
+    border: 5px solid red;
+    
+}
+
+form.formulario button {
+    border: none;
+    background-color: rgb(0, 209, 184);
+    border-radius: 20px;
+    width: 20%;
+    height: 20%;
+    color: #fff;
+}
+
+div.pai-cliente {
+    padding-top: 40px;
+    padding-left: 30px;
+}

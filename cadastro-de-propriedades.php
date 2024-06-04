@@ -1,54 +1,5 @@
-<?php 
-
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "imobiliaria";
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-if (!$conn) {
-    die("Erro ao conectar ao banco de dados". mysqli_connect_error());
-}
-
-if ($_SERVER["REQUEST_METHOD"]=="POST") {
-
-    $nome = mysqli_real_escape_string($conn, $_POST ["Nome"]);
-
-    $email = mysqli_real_escape_string($conn, $_POST["Email"]);
-
-    $telefone = mysqli_real_escape_string($conn, $_POST ["Telefone"]);
-
-    $endereco = mysqli_real_escape_string($conn, $_POST["Endereco"]);
-
-    /* Move_uploades_files = Mover um arquivo enviado via formulário HTML de um local temporário para um destino permanente no servidor. Ela verifica se o arquivo foi enviado via HTTP POST e se é um arquivo de upload válido. */
-    $sql = "INSERT INTO clientes (nome, email, telefone, endereco) VALUES ( '$nome', '$email' , '$telefone' , '$endereco')";
-
-    if (mysqli_query($conn, $sql)) {
-        echo "Novo Cliente Cadastrado com Sucesso";
-    } 
-
-    else {
-        echo "Erro: " . $sql . "<br>" . mysqli_error($conn);
-    }
-
-    /* Fechar conexão com o banco de dados */
-    mysqli_close($conn);
-
-}
-
-
-
-?>
-
-
-
-
-
-
-
 <!doctype html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -71,11 +22,12 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
         <div class="img-header">
 
             <ul>
-                <li>Cadastro de Clientes</li>
-                <li>Quem Somos</li>
+                <li>Casa</li>
+                <li>Apartamento</li>
                 <li> <a href="./cadastro-de-propriedades.php"> Propriedades </a></li>
-                <li href="#">Missão,Visão e Valores</li>
-                <li>Fale Conosco</li>
+                <li href="#">Terreno</li>
+                <li>Venda</li>
+                <li>Aluguel</li>
             </ul>
 
         </div>
@@ -86,13 +38,11 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 
     <main>
 
-        <div class="pai-cliente">
-
         <div class="clientes">
 
-            <h2>Cadastro de Clientes</h2>
+            <h2>Cadastro de Propriedades</h2>
 
-            <form class="formulario" method="POST" enctype="multipart/form-data">
+            <form method="POST" enctype="multipart/form-data">
 
 
                 <label for="codigo">Codigo</label>
@@ -110,12 +60,16 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
                 <label for="Endereco">Endereço</label>
                 <input type="text" id="Endereco" name="Endereco" required>
 
+                <label for="disponivel">Disponivel Para a Venda?</label>
+                <input type="checkbox" id="disponivel" name="disponivel">
+
                 <button class="enviar">Enviar</button>
-                
-                
-            </form>
         </div>
-        </div>
+
+
+
+
+        </form>
 
     </main>
 
