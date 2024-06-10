@@ -1,0 +1,9 @@
+
+@keyframes animateBorder {
+  0% {
+    border-width: 2px;
+  }
+  100% {
+    border-width: 10px;
+  }
+}

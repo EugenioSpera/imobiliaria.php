@@ -11,7 +11,7 @@ div.img-header {
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    height: 200px;
+    height: 100px;
 }
 
 header ul {
@@ -21,13 +21,22 @@ header ul {
 }
 
 li {
+    color: #fff;
     font-weight: bold;
     font-size: 25px;
+    list-style: none;
+    text-shadow: 1px 1px 2px rgb(131, 131, 131), 0 0 1em rgb(36, 36, 36), 0 0 0.2em rgb(46, 46, 46);
+}
+
+
+div.img-header ul li a {
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
 }
 
 li:hover {
-    border: 10px solid #fff;
-    border-radius: 20px;
+
     
 }
 
@@ -35,12 +44,67 @@ li:hover {
 
 /* -------------------------------- Main -------------------------- */
 
+main {
+    max-width: 1440px;
+    height: 100vh;
+    
+}
+
+div.imobiliaria {
+    padding-top: 5px;
+    height: 100%;
+    width: 100%;
+
+}
+
+
+
+div.background-image-imobiliria {
+    background-image: url(../img/img-predio-noturno.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 90vh;
+    object-fit: cover;
+    width: 100vw;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9);
+    border-radius: 2%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.container-texto {
+    text-shadow: 1px 1px 2px rgb(239, 186, 186), 0 0 1em rgb(213, 213, 255), 0 0 0.2em rgb(172, 172, 255);
+    margin: auto;
+    padding-left: 60px;
+    z-index: 1;
+    position: relative;
+    bottom: 50%;
+}
+
+div.container-texto h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #fff;
+}
+
+div.container-texto p {
+    color: #fff;
+    font-size: 20px;
+}
+
 
 main form {
     flex-direction: column;
     display: flex;
     gap: 10px;
     color: #fff;
+    
+}
+
+div.pai-cliente {
+   align-items: center;
+   padding-top: 20px;
 }
 
 div.clientes {
@@ -48,26 +112,51 @@ div.clientes {
     flex-direction: column;
     display: flex;
     justify-content: center;
-    width: 50%;
-    height: 500px;
+    width: 40%;
     padding-left: 20px;
-    background-image: url(../img/ceu-de-espaco-3d-abstrato-com-estrelas-e-nebulosa_1048-8320.avif);
+    position: absolute;
+    top: 130%;
+}
+
+
+
+
+
+
+/* ------------- Formulario ---------- */
+div.img-background-form {
+    opacity: 0.9;
+    object-fit: cover;
+    background-image: url(../img/img-espaco-1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 530px;
+    width: 60vh;
+    position: absolute;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
 }
 
 div.clientes h2 {
-    color: #fff;
+    text-shadow: 1px 1px 2px rgb(240, 127, 127), 0 0 1em rgb(101, 230, 27), 0 0 0.2em rgb(122, 122, 243);
+    font-size: 40px;
+    z-index: 1;
+    padding-left: 20px;
 }
 
+form.formulario {
+    z-index: 1;
+    padding-left: 20px;
+}
 
 form.formulario input {
-    border: none;
     border-radius: 20px;
-    width: 80%;
+    width: 70%;
 }
 
 form.formulario input:hover {
-    border: 5px solid red;
-    
+     border: 2px solid rgb(10, 10, 11);
 }
 
 form.formulario button {
@@ -77,9 +166,26 @@ form.formulario button {
     width: 20%;
     height: 20%;
     color: #fff;
+    cursor: pointer;
 }
 
 div.pai-cliente {
-    padding-top: 40px;
+    padding-top: 10px;
     padding-left: 30px;
+}
+
+div.img-casa-background-1 {
+    opacity: 0.9;
+    object-fit: cover;
+    background-image: url(../img/casa-propriedade-2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 40vw;
+    width: 190vh;
+    position: absolute;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    border: 10px solid black;
+    border-radius: 5%;
 }
