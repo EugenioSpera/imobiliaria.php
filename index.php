@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $endereco = mysqli_real_escape_string($conn, $_POST["Endereco"]);
 
-    
+
 
     /* Move_uploades_files = Mover um arquivo enviado via formulário HTML de um local temporário para um destino permanente no servidor. Ela verifica se o arquivo foi enviado via HTTP POST e se é um arquivo de upload válido. */
     $sql = "INSERT INTO clientes (nome, email, telefone, endereco) VALUES ( '$nome', '$email' , '$telefone' , '$endereco')";
@@ -93,12 +93,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div class="imobiliaria">
 
-            
+
             <div class="background-image-imobiliria">
-                
+
                 <!--  <img src="img/img-predio.jpg" alt=""> -->
             </div>
-            
+
             <div class="container-texto">
                 <h2>Imobiliaria Senac</h2>
                 <p>Conheça Nossos Preços e venha conosco ter <br> seu próprio investimento e moradia!</p>
@@ -108,7 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
 
-        
+
 
 
 
@@ -119,13 +119,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="pai-cliente">
 
             <div class="clientes">
-                
+
                 <h2>Cadastro de Clientes</h2>
 
                 <div class="img-background-form">
-                    
-                    </div>
-                    
+
+                </div>
+
 
                 <form class="formulario" method="POST" enctype="multipart/form-data">
 
@@ -155,6 +155,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
+
+    
 
 
     <!-- BootsTrap -->
