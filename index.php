@@ -72,11 +72,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <nav>
 
                 <ul>
-                    <li>Cadastro de Clientes</li>
-                    <li>Quem Somos</li>
-                    <li> <a href="./cadastro-de-propriedades.php">Cadastro de Propriedades </a></li>
-                    <li href="#">Missão,Visão e Valores</li>
-                    <li>Fale Conosco</li>
+                    <li><a href="index.php">HOME</a></li>
+                    <li><a href="about.php">Quem Somos</a></li>                    
+                    <li><a href="missao.php">Missão,Visão e Valores</a></li>                    
+                    <li><a href="cadastro-de-propriedades.php">Cadastro de Propriedades</a></li>
+                    <li><a href="imovel.php"> Escolha o seu Imóvel</a></li>
                 </ul>
 
             </nav>
@@ -101,19 +101,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <div class="container-texto">
                 <h2>Imobiliaria Senac</h2>
-                <p>Conheça Nossos Preços e venha conosco ter <br> seu próprio investimento e moradia!</p>
+                <p>Conheça Nossos Preços e realize <br> o sonho de ter sua casa própria!</p>
 
 
             </div>
         </div>
-
-
-
-
-
-
-
-
 
 
         <div class="pai-cliente">
@@ -151,12 +143,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
     </main>
-
-
-
-
-
     
+    <footer>
+        
+    </footer>
+
+
+        
 
 
     <!-- BootsTrap -->

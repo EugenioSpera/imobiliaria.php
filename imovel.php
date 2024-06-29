@@ -1,56 +1,3 @@
-<?php
-
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "imobiliaria";
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-if (!$conn) {
-    die("Erro ao conectar ao banco de dados" . mysqli_connect_error());
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    $endereco = mysqli_real_escape_string($conn, $_POST["endereco"]);
-
-    $tipo = mysqli_real_escape_string($conn, $_POST["tipo"]);
-
-    $preco = mysqli_real_escape_string($conn, $_POST["preco"]);
-
-    $descricao = mysqli_real_escape_string($conn, $_POST["descricao"]);
-
-    $diretorio_imagens = "uploads/"; /* Diretorio onde irão ficar as imagens */
-    
-    $imagem_nome = basename($_FILES["imagem"] ["name"]);/* Variavel que vai receber o nome da imagem enviada pelo formulário */
-
-    $destino = $diretorio_imagens . $imagem_nome;/* A variavel $destino irá receber o diretorio e o nome da imagem */
-
-
-
-    /* Move_uploades_files = Mover um arquivo enviado via formulário HTML de um local temporário para um destino permanente no servidor. Ela verifica se o arquivo foi enviado via HTTP POST e se é um arquivo de upload válido. */
-    $sql = "INSERT INTO propriedades (endereco, tipo, preco, descricao, imagem) VALUES ( '$endereco', '$tipo' , '$preco' , '$descricao', '$imagem')";
-
-    if (mysqli_query($conn, $sql)) {
-        echo "Novo Cliente Cadastrado com Sucesso";
-    } else {
-        echo "Erro: " . $sql . "<br>" . mysqli_error($conn);
-    }
-
-    /* Fechar conexão com o banco de dados */
-    mysqli_close($conn);
-}
-
-
-
-?>
-
-
-
-
-
-
 <!doctype html>
 <html lang="en">
 
@@ -78,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <ul>
                 <li> <a href="./index.php">HOME</a></li>
                 <li>Apartamento</li>
-                <li>Casa </a></li>
+                <li>Casa</li>
                 <li>Terreno</li>
                 <li>Venda</li>
                 <li>Aluguel</li>
@@ -109,10 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="text" id="endereco" name="endereco" required>
 
                     <label for="tipo">Tipo</label>
-                    <select name="tipo" id="tipo" required>
-                    <option value="venda">Venda</option>
-                    <option value="locacao">Locação</option>                    
-                    </select>
+                    <input type="text" id="tipo" name="tipo">
 
                     <label for="preco">Preço</label>
                     <input type="text" id="preco" name="preco" required>
@@ -132,6 +76,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
     </main>
+
+    <footer>
+        <div class="links">
+            <ul>
+                <li>
+                    <i class="fa-brands fa-square-instagram"></i>
+                    <a href="link" target="_blank">Instagram</a>
+                </li>
+
+                <li>
+                    <i class="fa-brands fa-facebook"></i>
+                    <a href="link" target="_blank">Facebook</a>
+                </li>
+
+                <li>
+                    <i class="fa-brands fa-youtube"></i>
+                    <a href="link" target="_blank">Yotube</a>
+                </li>
+
+                <li>
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <a href="link" target="_blank">Whatsapp</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
 
 
 
