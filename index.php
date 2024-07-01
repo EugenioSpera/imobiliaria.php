@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Imobiliaria</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/reset.css">
@@ -69,12 +69,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div class="img-header">
 
-            <nav>
+            <nav class="menu">
+                <!-- <label class="menu__logo" for="hamb-menu">
+                     &#9776 
+                </label>
+                <input type="checkbox" id="hamb-menu"> -->
 
                 <ul>
                     <li><a href="index.php">HOME</a></li>
-                    <li><a href="about.php">Quem Somos</a></li>                    
-                    <li><a href="missao.php">Missão,Visão e Valores</a></li>                    
+                    <li><a href="about.php">Quem Somos</a></li>
+                    <li><a href="missao.php">Missão,Visão e Valores</a></li>
                     <li><a href="cadastro-de-propriedades.php">Cadastro de Propriedades</a></li>
                     <li><a href="imovel.php"> Escolha o seu Imóvel</a></li>
                 </ul>
@@ -143,13 +147,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
     </main>
-    
+
     <footer>
-        
+
     </footer>
 
 
-        
+
 
 
     <!-- BootsTrap -->

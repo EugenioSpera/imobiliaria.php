@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Imobiliaria</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="./css/reset.css">
@@ -24,9 +24,9 @@
 
             <nav>
 
-                <ul class="menu-nav">
+                <ul class="menu-nav-about">
                     <li><a href="index.php"> HOME</a></li>
-                    <li><a href="about.php"><span>Quem Somos</span></a></li>                    
+                    <li><a href="about.php"><span class="menu-about">Quem Somos</span></a></li>                    
                     
                 </ul>
 

@@ -13,6 +13,8 @@ if (!$conn) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+    $idCliente = mysqli_real_escape_string($conn, $_POST["idCliente"]);
+
     $endereco = mysqli_real_escape_string($conn, $_POST["endereco"]);
 
     $tipo = mysqli_real_escape_string($conn, $_POST["tipo"]);
@@ -27,10 +29,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $destino = $diretorio_imagens . $imagem_nome;/* A variavel $destino irá receber o diretorio e o nome da imagem */
 
+    $tipoImovel = mysqli_real_escape_string($conn, $_POST["tipoImovel"]);
+
 
 
     /* Move_uploades_files = Mover um arquivo enviado via formulário HTML de um local temporário para um destino permanente no servidor. Ela verifica se o arquivo foi enviado via HTTP POST e se é um arquivo de upload válido. */
-    $sql = "INSERT INTO propriedades (endereco, tipo, preco, descricao, imagem) VALUES ( '$endereco', '$tipo' , '$preco' , '$descricao', '$imagem')";
+    $sql = "INSERT INTO propriedades (idCliente, endereco, tipo, preco, descricao, imagem, tipoImovel) VALUES ( '$idCliente', '$endereco', '$tipo' , '$preco' , '$descricao', '$imagem', '$tipoImovel')";
 
     if (mysqli_query($conn, $sql)) {
         echo "Novo Cliente Cadastrado com Sucesso";
@@ -57,11 +61,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Imobiliaria</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
 
 
 
@@ -75,13 +79,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div class="img-header">
 
-            <ul>
+            <ul class="menu-nav-cad">
                 <li> <a href="./index.php">HOME</a></li>
-                <li>Apartamento</li>
-                <li>Casa </a></li>
-                <li>Terreno</li>
-                <li>Venda</li>
-                <li>Aluguel</li>
+                <li><a href="cadastro-de-propriedades.php"><span class="menu-cad">Cadastro de Propriedades</span></a></li> 
+                
             </ul>
 
         </div>
@@ -92,30 +93,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <main>
 
-        <div class="pai-cliente">
+        <div class="pai-cliente-cad">
 
             <div class="img-casa-background-1"></div>
 
-            <div class="clientes">
+            <div class="clientes-cad">
 
                 <h2>Cadastro de Propriedade</h2>
 
-                <div class="img-background-form"></div>
+                <div class="img-background-form-cadastro"></div>
 
                 <form method="POST" enctype="multipart/form-data" class="formulario">
                     
+                    <label for="idCliente">Codigo Cliente</label>
+                    <input type="text" id="idCliente" name="idCliente" required>
 
                     <label for="endereco">Endereco</label>
                     <input type="text" id="endereco" name="endereco" required>
 
                     <label for="tipo">Tipo</label>
                     <select name="tipo" id="tipo" required>
+                    <option value="" disabled selected>Escolha uma opção</option>
                     <option value="venda">Venda</option>
                     <option value="locacao">Locação</option>                    
                     </select>
 
+                    <label for="tipoImovel">Tipo Imovel</label>
+                    <select name="tipoImovel" id="tipoImovel" required>
+                    <option value="" disabled selected>Escolha uma opção</option>
+                    <option value="casa">Casa</option>
+                    <option value="apartamento">Apartamento</option>                    
+                    <option value="terreno">Terreno</option>                    
+                    </select>
+
+
                     <label for="preco">Preço</label>
-                    <input type="text" id="preco" name="preco" required>
+                    <input type="number" id="preco" name="preco" required>
 
                     <label for="descricao">Descrição</label>
                     <input type="text" id="descricao" name="descricao" required>
@@ -123,6 +136,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="imagem">Imagem da Propriedade</label>
                     <input type="file" id="imagem" name="imagem" required>
 
+                    
                     <button class="enviar">Enviar</button>
                 </form>
 
