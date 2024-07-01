@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <li><a href="about.php">Quem Somos</a></li>
                     <li><a href="missao.php">Missão,Visão e Valores</a></li>
                     <li><a href="cadastro-de-propriedades.php">Cadastro de Propriedades</a></li>
-                    <li><a href="imovel.php"> Escolha o seu Imóvel</a></li>
+                    <li><a href="imovel.html"> Escolha o seu Imóvel</a></li>
                 </ul>
 
             </nav>
